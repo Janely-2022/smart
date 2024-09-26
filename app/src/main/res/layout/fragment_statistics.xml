@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true"
+        android:background="@color/white"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="0dp"> <!-- Added padding to prevent UI cut-off -->
+
+                <!-- Title Text -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Electric Statistics"
+                    android:textColor="@color/nordicLake"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:paddingTop="16dp"/> <!-- Added padding for visual spacing -->
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:fillViewport="true">
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/chart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="400dp" />
+
+                </HorizontalScrollView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/sensor_readings_recycleView"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+                <!-- Summary UI Elements -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center">
+
+                    <!-- Total Current Last Month -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/rounded_corner_background_blue"
+                        android:gravity="center">
+
+
+                        <TextView
+                            android:id="@+id/total_current_last_month"
+                            android:layout_width="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_height="wrap_content"
+                            android:text="0 A"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"/>
+
+                        <View
+                            android:layout_width="wrap_content"
+                            android:layout_height="1dp"
+                            android:background="@color/white"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Total Current Last Month"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- Space between the two boxes -->
+                    <View
+                        android:layout_width="16dp"
+                        android:layout_height="wrap_content"/>
+
+                    <!-- Total Current This Month -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/rounded_corner_background_blue"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/total_current_this_month"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0 A"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"/>
+
+                        <View
+                            android:layout_width="wrap_content"
+                            android:layout_height="1dp"
+                            android:background="@color/white"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Total Current This Month"
+                            android:layout_marginBottom="10dp"
+                            android:textSize="13sp"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical"-->
+<!--    android:fitsSystemWindows="true"-->
+<!--    android:background="@color/white"-->
+<!--    android:layout_marginStart="5dp"-->
+<!--    android:layout_marginEnd="8dp">-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        android:paddingBottom="0dp"> &lt;!&ndash; Added padding to prevent UI cut-off &ndash;&gt;-->
+
+<!--        &lt;!&ndash; Title Text &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Electric Statistics"-->
+<!--            android:textColor="@color/nordicLake"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:paddingTop="16dp"/> &lt;!&ndash; Added padding for visual spacing &ndash;&gt;-->
+
+<!--        &lt;!&ndash; Line Chart &ndash;&gt;-->
+<!--        <HorizontalScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginEnd="15dp"-->
+<!--            android:fillViewport="true">-->
+<!--            <com.github.mikephil.charting.charts.LineChart-->
+<!--                android:id="@+id/chart"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="400dp" />-->
+
+<!--        </HorizontalScrollView>-->
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/sensor_readings_recycleView"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:padding="10dp">-->
+
+<!--        </androidx.recyclerview.widget.RecyclerView>-->
+
+
+<!--        &lt;!&ndash; Summary UI Elements &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:padding="16dp"-->
+<!--            android:gravity="center">-->
+
+<!--            &lt;!&ndash; Total Current Last Month &ndash;&gt;-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="vertical"-->
+<!--                android:background="@drawable/rounded_corner_background_blue"-->
+<!--                android:gravity="center">-->
+
+
+<!--                <TextView-->
+<!--                    android:id="@+id/total_current_last_month"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="0 A"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textColor="@color/white"/>-->
+
+<!--                <View-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="1dp"-->
+<!--                    android:background="@color/white"/>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="15dp"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:text="Total Current Last Month"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="13sp"-->
+<!--                    android:textStyle="bold" />-->
+<!--            </LinearLayout>-->
+
+<!--            &lt;!&ndash; Space between the two boxes &ndash;&gt;-->
+<!--            <View-->
+<!--                android:layout_width="16dp"-->
+<!--                android:layout_height="wrap_content"/>-->
+
+<!--            &lt;!&ndash; Total Current This Month &ndash;&gt;-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="vertical"-->
+<!--                android:background="@drawable/rounded_corner_background_blue"-->
+<!--                android:gravity="center">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/total_current_this_month"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="0 A"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textColor="@color/white"/>-->
+
+<!--                <View-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="1dp"-->
+<!--                    android:background="@color/white"/>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:text="Total Current This Month"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:textSize="13sp"-->
+<!--                    android:textColor="@color/white"/>-->
+<!--            </LinearLayout>-->
+<!--        </LinearLayout>-->
+
+<!--    </LinearLayout>-->
+<!--</ScrollView>-->

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Smart Outlet</string>
+    <string name="app_motto">Smart Electric Outlet</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_desc">Control your lights, monitor real time voltage usage &amp; power consumption &amp; automate your home all from one app with just onne or two tap</string>
+    <string name="required_error">This field is required</string>
+    <string name="non_empty_error">This field can not be empty</string>
+</resources>
